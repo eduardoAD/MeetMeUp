@@ -88,8 +88,21 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Meet Me Up" id="ie0-rf-aT4"/>
+                    <navigationItem key="navigationItem" title="Meet Me Up" id="ie0-rf-aT4">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="ROb-aM-iAJ">
+                            <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" minimumFontSize="17" id="Uzz-4n-EmA">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="searchMeetup:" destination="vXZ-lx-hvc" eventType="editingDidEndOnExit" id="8VK-Yj-5jk"/>
+                                </connections>
+                            </textField>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="searchText" destination="Uzz-4n-EmA" id="G57-OM-YP7"/>
                         <outlet property="tableView" destination="jbY-8P-nef" id="Bof-1U-jOs"/>
                     </connections>
                 </viewController>

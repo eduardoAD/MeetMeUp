@@ -13,9 +13,26 @@
 @property NSArray *meetupResults;
 @property NSDictionary *selectedMeetup;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UITextField *searchText;
 @end
 
 @implementation ViewController
+
+- (IBAction)searchMeetup:(UITextField *)sender {
+
+    NSString *urlString = [NSString stringWithFormat:@"https://api.meetup.com/2/open_events.json?zip=60604&key=35476c66197967107464723a5869147&text=%@", self.searchText.text];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+
+        NSError *jsonError = nil;
+
+        self.meetupResults = [((NSDictionary *)[NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError]) objectForKey:@"results"];
+
+        [self.tableView reloadData];
+    }];
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
