@@ -7,9 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "DetailMeetupViewController.h"
 
-@interface ViewController ()
-@property NSArray *events;
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
+@property NSArray *meetupResults;
+@property NSDictionary *selectedMeetup;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @end
 
 @implementation ViewController
@@ -20,21 +23,44 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
 
-        NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        NSLog(@"%@",jsonString);
-
         NSError *jsonError = nil;
-        self.events = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
 
+        self.meetupResults = [((NSDictionary *)[NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError]) objectForKey:@"results"];
 
-        NSLog(@"Connection error: %@", connectionError);
-        NSLog(@"JSON error: %@", jsonError);
+        [self.tableView reloadData];
+
+        //NSLog(@"Connection error: %@", connectionError);
+        //NSLog(@"JSON error: %@", jsonError);
     }];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"eventCellID" forIndexPath:indexPath];
+
+    NSDictionary *meetup = (NSDictionary *)[self.meetupResults objectAtIndex:indexPath.row];
+
+    cell.textLabel.text = [meetup objectForKey:@"name"];
+    cell.detailTextLabel.text = [(NSDictionary *)[meetup objectForKey:@"venue"] objectForKey:@"address_1"];
+
+    return  cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.meetupResults.count;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    DetailMeetupViewController *destination = [segue destinationViewController];
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+
+    self.selectedMeetup = (NSDictionary *)[self.meetupResults objectAtIndex:indexPath.row];
+
+    destination.meetup = self.selectedMeetup;
 }
 
 @end

@@ -14,6 +14,8 @@
 		E4427B1419EC55ED008D0557 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4427B1319EC55ED008D0557 /* Images.xcassets */; };
 		E4427B1719EC55ED008D0557 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4427B1519EC55ED008D0557 /* LaunchScreen.xib */; };
 		E4427B2319EC55ED008D0557 /* MeetMeUpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4427B2219EC55ED008D0557 /* MeetMeUpTests.m */; };
+		E4427B3619EC73A0008D0557 /* DetailMeetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4427B3519EC73A0008D0557 /* DetailMeetupViewController.m */; };
+		E4427B3C19EC8EA3008D0557 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4427B3B19EC8EA3008D0557 /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		E4427B1C19EC55ED008D0557 /* MeetMeUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeetMeUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4427B2119EC55ED008D0557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4427B2219EC55ED008D0557 /* MeetMeUpTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeetMeUpTests.m; sourceTree = "<group>"; };
+		E4427B3419EC73A0008D0557 /* DetailMeetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailMeetupViewController.h; sourceTree = "<group>"; };
+		E4427B3519EC73A0008D0557 /* DetailMeetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailMeetupViewController.m; sourceTree = "<group>"; };
+		E4427B3A19EC8EA3008D0557 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = ../WebViewController.h; sourceTree = "<group>"; };
+		E4427B3B19EC8EA3008D0557 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = ../WebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,10 @@
 				E4427B0D19EC55ED008D0557 /* ViewController.h */,
 				E4427B0E19EC55ED008D0557 /* ViewController.m */,
 				E4427B1019EC55ED008D0557 /* Main.storyboard */,
+				E4427B3419EC73A0008D0557 /* DetailMeetupViewController.h */,
+				E4427B3519EC73A0008D0557 /* DetailMeetupViewController.m */,
+				E4427B3A19EC8EA3008D0557 /* WebViewController.h */,
+				E4427B3B19EC8EA3008D0557 /* WebViewController.m */,
 				E4427B1319EC55ED008D0557 /* Images.xcassets */,
 				E4427B1519EC55ED008D0557 /* LaunchScreen.xib */,
 				E4427B0619EC55ED008D0557 /* Supporting Files */,
@@ -220,6 +230,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4427B0F19EC55ED008D0557 /* ViewController.m in Sources */,
+				E4427B3C19EC8EA3008D0557 /* WebViewController.m in Sources */,
+				E4427B3619EC73A0008D0557 /* DetailMeetupViewController.m in Sources */,
 				E4427B0C19EC55ED008D0557 /* AppDelegate.m in Sources */,
 				E4427B0919EC55ED008D0557 /* main.m in Sources */,
 			);
