@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WRB-Qs-wBM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -280,10 +281,10 @@
                                 <exclude reference="Ypl-NN-clp"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="dcz-U2-50T"/>
                                 <exclude reference="PaH-9I-XSP"/>
                                 <exclude reference="Tbn-Es-HEJ"/>
                                 <exclude reference="ldy-Y6-MX0"/>
-                                <exclude reference="dcz-U2-50T"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -291,10 +292,10 @@
                                 <include reference="Ypl-NN-clp"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="dcz-U2-50T"/>
                                 <include reference="PaH-9I-XSP"/>
                                 <include reference="Tbn-Es-HEJ"/>
                                 <include reference="ldy-Y6-MX0"/>
-                                <include reference="dcz-U2-50T"/>
                             </mask>
                         </variation>
                     </view>
